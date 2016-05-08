@@ -29,16 +29,12 @@
 
 -(NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName{
     NSMutableDictionary *countsOfIceCream = [[NSMutableDictionary alloc]init];
-    NSLog(@"%@",iceCreamByName);
     for (NSString *key in iceCreamByName) {
     NSArray *names = [self namesForIceCream: iceCreamByName[key]];
-    NSUInteger count = [names count];
-        NSNumber *Objcount = @(count);
+        NSNumber *prefCount = @([names count]);
         NSString *iceCreamName = iceCreamByName[key];
-        countsOfIceCream[iceCreamName] = Objcount;
-        NSLog(@"%@",names);
+        countsOfIceCream[iceCreamName] = prefCount;
     }
-    NSLog(@"%@", countsOfIceCream);
     return countsOfIceCream;
 }
 
